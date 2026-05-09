@@ -1,6 +1,5 @@
-// app/courses/page.jsx
 
-import { FaEye } from "react-icons/fa";
+import { FaEye, FaStar } from "react-icons/fa";
 
 const getCourses = async () => {
     const res = await fetch("http://localhost:3000/courses.json");
@@ -35,7 +34,7 @@ export default async function CoursesPage() {
                         <p className="text-gray-600">{course.instructor}</p>
                         <p className="text-sm text-gray-500">{course.duration}</p>
                         <p className="text-sm text-yellow-600 flex gap-1">
-                            <FaEye size={18}></FaEye>  {course.rating}
+                            <FaStar size={18}></FaStar>  {course.rating}
                         </p>
                         <p className="text-sm text-blue-600">
                             Level: {course.level}
