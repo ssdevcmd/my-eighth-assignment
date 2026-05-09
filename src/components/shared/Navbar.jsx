@@ -1,7 +1,6 @@
-
-"use client";
 import Link from "next/link";
 import Image from "next/image";
+import NavLink from "./NavLink";
 
 const Navbar = ({ user, handleLogout }) => {
     return (
@@ -22,26 +21,17 @@ const Navbar = ({ user, handleLogout }) => {
 
                {/* Nav Links */}
                 <div className="hidden md:flex items-center gap-8 font-medium text-gray-700">
-                   <Link
-                     href="/"
-                     className="hover:text-blue-600 transition-colors duration-200"
-                        >
+                   <NavLink href="/">
                         Home
-                    </Link>
+                    </NavLink>
 
-                <Link
-                    href="/courses"
-                    className="hover:text-blue-600 transition-colors duration-200"
-                        >
+                <NavLink href="/courses">
                        Courses
-                   </Link>
+                   </NavLink>
 
-                <Link
-                   href="/profile"
-                   className="hover:text-blue-600 transition-colors duration-200"
-                        >
+                <NavLink href="/profile">
                       My Profile
-                  </Link>
+                  </NavLink>
                   </div>
 
                    {/* Auth Section */}
@@ -49,8 +39,8 @@ const Navbar = ({ user, handleLogout }) => {
                    {user ? (
                         <>
                           {/* Avatar */}
-                     <div className="relative w-11 h-11 rounded-full overflow-hidden border-2 border-blue-500">
-                            <Image
+              <div className="relative w-11 h-11 rounded-full overflow-hidden border-2 border-blue-500">
+                       <Image
                        src={user?.photoURL || "/avatar.png"}
                        alt="User Avatar"
                        fill
@@ -58,13 +48,13 @@ const Navbar = ({ user, handleLogout }) => {
                                    />
                         </div>
 
-                        {/* Logout */}
-                          <button
-                           onClick={handleLogout}
-                           className="px-4 py-2 rounded-xl bg-red-500 hover:bg-red-600 text-white font-medium transition duration-200"
+                 {/* Logout */}
+                    <button
+                        onClick={handleLogout}
+                       className="px-4 py-2 rounded-xl bg-red-500 hover:bg-red-600 text-white font-medium transition duration-200"
                                 >
-                             Logout
-                          </button>
+                          Logout
+                     </button>
                             </>
                         ) : (
                             <>
@@ -74,12 +64,12 @@ const Navbar = ({ user, handleLogout }) => {
                           className="px-4 py-2 rounded-xl border border-blue-600 text-blue-600 hover:bg-blue-50 transition duration-200 font-medium"
                               >
                              Login
-                          </Link>
+                       </Link>
 
                            {/* Register */}
-                           <Link
-                             href="/register"
-                             className="px-4 py-2 rounded-xl bg-blue-600 hover:bg-blue-700 text-white font-medium transition duration-200"
+                       <Link
+                          href="/register"
+                           className="px-4 py-2 rounded-xl bg-blue-600 hover:bg-blue-700 text-white font-medium transition duration-200"
                                 >
                             Register
                          </Link>

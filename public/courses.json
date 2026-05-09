@@ -1,0 +1,68 @@
+[
+  {
+    "id": 1,
+    "title": "Complete Web Development Bootcamp",
+    "instructor": "John Doe",
+    "duration": "20 hours",
+    "rating": 4.8,
+    "level": "Beginner",
+    "description": "Learn full-stack web development from scratch using HTML, CSS, JavaScript, React, Node.js, Express, and MongoDB.",
+    "image": "https://i.postimg.cc/3R0w5Q9X/web-development.png",
+    "category": "Development"
+  },
+  {
+    "id": 2,
+    "title": "React.js Masterclass",
+    "instructor": "Sarah Johnson",
+    "duration": "15 hours",
+    "rating": 4.9,
+    "level": "Intermediate",
+    "description": "Build modern and scalable user interfaces with React, Hooks, Context API, and Next.js.",
+    "image": "https://i.postimg.cc/B6k5z8dM/react-course.png",
+    "category": "Frontend"
+  },
+  {
+    "id": 3,
+    "title": "Node.js & Express API Development",
+    "instructor": "Michael Brown",
+    "duration": "18 hours",
+    "rating": 4.7,
+    "level": "Intermediate",
+    "description": "Create REST APIs with Node.js, Express, authentication, and MongoDB integration.",
+    "image": "https://i.postimg.cc/8P3vXhVw/nodejs-course.png",
+    "category": "Backend"
+  },
+  {
+    "id": 4,
+    "title": "Python for Beginners",
+    "instructor": "Emily Carter",
+    "duration": "12 hours",
+    "rating": 4.6,
+    "level": "Beginner",
+    "description": "Start programming with Python and learn variables, loops, functions, and object-oriented programming.",
+    "image": "https://i.postimg.cc/J4TnK8mL/python-course.png",
+    "category": "Programming"
+  },
+  {
+    "id": 5,
+    "title": "UI/UX Design Fundamentals",
+    "instructor": "David Wilson",
+    "duration": "10 hours",
+    "rating": 4.8,
+    "level": "Beginner",
+    "description": "Learn wireframing, prototyping, color theory, typography, and design thinking principles.",
+    "image": "https://i.postimg.cc/FsQ9y7hB/uiux-course.png",
+    "category": "Design"
+  },
+  {
+    "id": 6,
+    "title": "Data Structures & Algorithms",
+    "instructor": "Sophia Lee",
+    "duration": "25 hours",
+    "rating": 4.9,
+    "level": "Advanced",
+    "description": "Master arrays, linked lists, trees, graphs, sorting, searching, and coding interview techniques.",
+    "image": "https://i.postimg.cc/cL1f0YzR/dsa-course.png",
+    "category": "Computer Science"
+  }
+]
