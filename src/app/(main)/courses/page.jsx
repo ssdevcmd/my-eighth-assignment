@@ -1,4 +1,6 @@
 
+import { Button } from "@heroui/react";
+import Link from "next/link";
 import { FaEye, FaStar } from "react-icons/fa";
 
 const getCourses = async () => {
@@ -13,6 +15,7 @@ const getCourses = async () => {
 
 export default async function CoursesPage() {
     const courses = await getCourses();
+    console.log(courses, 'all courses');
 
     return (
         <div className="max-w-7xl mx-auto px-4 py-10">
@@ -42,6 +45,9 @@ export default async function CoursesPage() {
                         <p className="mt-2 text-sm text-gray-700">
                             {course.description}
                         </p>
+                        <div>
+                            <Link href={`/courses/${course.id}`}><Button>Details</Button></Link>
+                        </div>
                     </div>
                 ))}
             </div>

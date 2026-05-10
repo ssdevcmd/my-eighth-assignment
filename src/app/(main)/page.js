@@ -1,5 +1,7 @@
 import HeroSlider from "@/components/banner/HeroSlider";
-import PopularCourses from "@/components/PopularCourses";
+import LearningTips from "@/components/banner/LearningTips";
+import PopularCourses from "@/components/banner/PopularCourses";
+import TopInstructor from "@/components/banner/TopInstructor";
 
 
 
@@ -11,6 +13,8 @@ export default function Home() {
 
       <HeroSlider></HeroSlider>
       <PopularCourses></PopularCourses>
+      <LearningTips></LearningTips>
+      <TopInstructor></TopInstructor>
     </div>
   );
 }

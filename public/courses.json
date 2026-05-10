@@ -7,7 +7,7 @@
     "rating": 4.8,
     "level": "Beginner",
     "description": "Learn full-stack web development from scratch using HTML, CSS, JavaScript, React, Node.js, Express, and MongoDB.",
-    "image": "https://i.postimg.cc/3R0w5Q9X/web-development.png",
+    "image": "https://plus.unsplash.com/premium_photo-1685086785423-435c02d5c321?q=80&w=387&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     "category": "Development"
   },
   {
@@ -18,7 +18,7 @@
     "rating": 4.9,
     "level": "Intermediate",
     "description": "Build modern and scalable user interfaces with React, Hooks, Context API, and Next.js.",
-    "image": "https://i.postimg.cc/B6k5z8dM/react-course.png",
+    "image": "https://images.unsplash.com/photo-1633356122102-3fe601e05bd2?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     "category": "Frontend"
   },
   {
@@ -29,7 +29,7 @@
     "rating": 4.7,
     "level": "Intermediate",
     "description": "Create REST APIs with Node.js, Express, authentication, and MongoDB integration.",
-    "image": "https://i.postimg.cc/8P3vXhVw/nodejs-course.png",
+    "image": "https://images.unsplash.com/photo-1650234083227-74c0700b295a?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     "category": "Backend"
   },
   {
@@ -40,7 +40,7 @@
     "rating": 4.6,
     "level": "Beginner",
     "description": "Start programming with Python and learn variables, loops, functions, and object-oriented programming.",
-    "image": "https://i.postimg.cc/J4TnK8mL/python-course.png",
+    "image": "https://images.unsplash.com/photo-1649180556628-9ba704115795?q=80&w=862&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     "category": "Programming"
   },
   {
@@ -51,7 +51,7 @@
     "rating": 4.8,
     "level": "Beginner",
     "description": "Learn wireframing, prototyping, color theory, typography, and design thinking principles.",
-    "image": "https://i.postimg.cc/FsQ9y7hB/uiux-course.png",
+    "image": "https://plus.unsplash.com/premium_photo-1720274013734-b172a1c8c31e?q=80&w=774&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     "category": "Design"
   },
   {
@@ -62,7 +62,7 @@
     "rating": 4.9,
     "level": "Advanced",
     "description": "Master arrays, linked lists, trees, graphs, sorting, searching, and coding interview techniques.",
-    "image": "https://i.postimg.cc/cL1f0YzR/dsa-course.png",
+    "image": "https://plus.unsplash.com/premium_photo-1681810994162-43dbe0919d3f?q=80&w=812&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     "category": "Computer Science"
   }
 ]
