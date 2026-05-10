@@ -25,7 +25,7 @@ export default async function CoursesPage() {
                 {courses.map((course) => (
                     <div
                         key={course.id}
-                        className="border rounded-2xl p-4 shadow-sm"
+                        className="border rounded-2xl p-4 shadow-sm flex flex-col h-ful gap-1"
                     >
                         <img
                             src={course.image}
@@ -39,13 +39,20 @@ export default async function CoursesPage() {
                         <p className="text-sm text-yellow-600 flex gap-1">
                             <FaStar size={18}></FaStar>  {course.rating}
                         </p>
-                        <p className="text-sm text-blue-600">
-                            Level: {course.level}
+                        <p
+                          className={`mb-4 font-medium px-3 py-1 rounded-full ${course.level === "Beginner"
+                         ? "text-green-500"
+                             : course.level === "Intermediate"
+                             ? "text-yellow-500"
+                             : "text-red-500"
+                              }`}
+                        >
+                          Level: {course.level}
                         </p>
                         <p className="mt-2 text-sm text-gray-700">
                             {course.description}
                         </p>
-                        <div>
+                        <div className="p-4 mt-auto">
                             <Link href={`/courses/${course.id}`}><Button>Details</Button></Link>
                         </div>
                     </div>

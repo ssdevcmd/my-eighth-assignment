@@ -1,5 +1,7 @@
+import Image from "next/image";
 import React from "react";
 import { FaStar } from "react-icons/fa";
+
 
 async function getCourses() {
     const res = await fetch("http://localhost:3000/courses.json");
@@ -28,7 +30,12 @@ export default async function TopInstructor() {
                         key={course.id}
                         className="bg-white shadow-lg rounded-2xl overflow-hidden hover:shadow-xl transition"
                     >
-                      
+                        {/* <Image src={instructorImages(course.instructor)}
+                            alt={course.instructor}
+                            width={100}
+                            height={100}
+                            className="rounded-full" >
+                        </Image> */}
 
                         <div className="p-4 space-y-2">
                             <h3 className="text-lg font-semibold">
@@ -40,8 +47,8 @@ export default async function TopInstructor() {
                             </p>
 
                             <p className="text-sm text-yellow-600 flex gap-1">
-                            <FaStar size={18}></FaStar>  {course.rating}
-                        </p>
+                                <FaStar size={18}></FaStar>  {course.rating}
+                            </p>
                         </div>
                     </div>
                 ))}
