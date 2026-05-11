@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import NavLink from "./NavLink";
+import userAvatar from "@/assets/user.png";
 
 const Navbar = ({ user, handleLogout }) => {
     return (
@@ -41,10 +42,10 @@ const Navbar = ({ user, handleLogout }) => {
                           {/* Avatar */}
               <div className="relative w-11 h-11 rounded-full overflow-hidden border-2 border-blue-500">
                        <Image
-                       src={user?.photoURL || "/avatar.png"}
+                       src={userAvatar}
                        alt="User Avatar"
-                       fill
-                       className="object-cover"
+                       width={60}
+                       height={60}
                                    />
                         </div>
 
@@ -61,18 +62,18 @@ const Navbar = ({ user, handleLogout }) => {
                          {/* Login */}
                           <Link
                            href="/login"
-                          className="px-4 py-2 rounded-xl border border-blue-600 text-blue-600 hover:bg-blue-50 transition duration-200 font-medium"
+                          className="px-4 py-2 rounded-xl border border-blue-600 bg-blue-700 text-white  font-medium"
                               >
                              Login
                        </Link>
 
                            {/* Register */}
-                       <Link
+                       {/* <Link
                           href="/register"
                            className="px-4 py-2 rounded-xl bg-blue-600 hover:bg-blue-700 text-white font-medium transition duration-200"
                                 >
                             Register
-                         </Link>
+                         </Link> */}
                             </>
                         )}
                     </div>

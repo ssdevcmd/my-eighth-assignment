@@ -1,54 +1,62 @@
+import { BsFillRocketTakeoffFill } from "react-icons/bs";
+import { CgNotes } from "react-icons/cg";
+import { FaLaptop } from "react-icons/fa";
+import { FaRepeat } from "react-icons/fa6";
+import { FcAlarmClock } from "react-icons/fc";
+import { MdMobileOff } from "react-icons/md";
+import { TbTargetArrow } from "react-icons/tb";
+
 const learningTips = [
     {
     id: 1,
     title: "Set Daily Learning Goals",
     description:
       "Break your study sessions into small achievable goals to stay focused and motivated.",
-    icon: "🎯",
+    icon: <TbTargetArrow className="text-red-500" />,
   },
   {
     id: 2,
     title: "Use the Pomodoro Technique",
     description:
       "Study for 25 minutes, then take a 5-minute break to improve concentration.",
-    icon: "⏱️",
+    icon: <FcAlarmClock />,
   },
   {
     id: 3,
     title: "Take Smart Notes",
     description:
       "Write down key concepts and summarize lessons in your own words.",
-    icon: "📝",
+    icon: <CgNotes  className="text-green-500"/>,
   },
   {
     id: 4,
     title: "Practice Consistently",
     description:
       "Apply what you learn through coding exercises and real projects.",
-    icon: "💻",
+    icon: <FaLaptop className="text-blue-400" />,
   },
   {
     id: 5,
     title: "Avoid Distractions",
     description:
       "Turn off notifications and create a dedicated study environment.",
-    icon: "📵",
+    icon: <MdMobileOff className="text-red-500" />,
   },
   {
     id: 6,
     title: "Review Regularly",
     description:
       "Revisit previous lessons to strengthen long-term memory.",
-    icon: "🔁",
+    icon: <FaRepeat className="text-violet-500" />,
   },
 ];
 
-export default function LearningTips() {
+const LearningTips = () => {
   return (
     <section className="max-w-7xl mx-auto px-4 py-16">
       <div className="text-center mb-12">
         <h2 className="text-3xl md:text-4xl font-bold text-gray-900">
-          📌 Learning Tips
+           Learning Tips
         </h2>
         <p className="mt-3 text-gray-600 max-w-2xl mx-auto">
           Improve your study habits with practical techniques for better focus,
@@ -76,4 +84,6 @@ export default function LearningTips() {
       </div>
     </section>
   );
-}
+};
+
+export default LearningTips;

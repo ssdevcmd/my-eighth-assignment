@@ -1,5 +1,6 @@
 "use client";
-import { Button, Checkbox, Description, FieldError, Form, Input, Label, TextField } from '@heroui/react';
+import { authClient } from '@/lib/auth-client';
+import { Button, Checkbox, Description, FieldError, Form, Input, Label, TextField, Toast, toast } from '@heroui/react';
 import React from 'react';
 import { useForm } from 'react-hook-form';
 
@@ -11,12 +12,31 @@ const RegisterPage = () => {
         watch } = useForm();
 
 
-    const handleRegisterFunc = (data) => {
+    const handleRegisterFunc = async (data) => {
         // e.preventDefault();
         // const email = e.target.email.value;
         // const password = e.target.password.value;
         // console.log('user email & password:',email, password, );
         console.log('user data:', data);
+        const { email, name, photo, password } = data;
+
+        const { data: res, error } = await authClient.signUp.email({
+            name: name, // required
+            email: email, // required
+            password: password, // required
+            image: photo,
+            callbackURL: "/",
+        });
+        console.log(res, error);
+        
+        if (error) {
+            toast.danger(error.message);
+            return;
+        }
+
+        if (res) {
+            toast.success("Signup successful");
+        }
     };
     // console.log(watch('email'));
     // console.log(watch('password'));

@@ -4,7 +4,9 @@ import { Button } from "@heroui/react";
 import Link from "next/link";
 import { FaEye, FaStar } from "react-icons/fa";
 
-
+export const metadata = {
+  title: "SkillSphere - courses",
+};
 
 export default async function CoursesPage() {
     const courses = await getCourses();

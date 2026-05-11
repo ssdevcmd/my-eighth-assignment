@@ -1,8 +1,22 @@
 import { getCourses } from "@/lib/data";
 import Image from "next/image";
 
+export const generateMetadata = async ({params}) => {
+    const { id } = await params;
+    console.log(id, "params");
+    const courses = await getCourses();
+     const course = courses.find(
+    (e) => e.id.toString() === id );
+    console.log(course,"courses");
 
-export default async function CourseDetailsPage({ params }) {
+    return {
+        title: course.title,
+        description: course.description,
+    }
+}
+
+
+const CourseDetailsPage = async({ params }) => {
     const { id } = await params;
 
     const courses = await getCourses();
@@ -58,4 +72,6 @@ export default async function CourseDetailsPage({ params }) {
             </p>
         </div>
     );
-}
+};
+
+export default CourseDetailsPage;

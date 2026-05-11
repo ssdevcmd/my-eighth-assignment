@@ -39,17 +39,11 @@ const Footer = () => {
                         </h3>
 
                         <div className="flex flex-col gap-2 text-sm">
-                            <Link
-                                href="/terms"
-                                className="hover:text-white transition duration-200"
-                            >
+                            <Link href="/terms">
                                 Terms & Conditions
                             </Link>
 
-                            <Link
-                                href="/privacy"
-                                className="hover:text-white transition duration-200"
-                            >
+                            <Link href="/privacy">
                                 Privacy Policy
                             </Link>
                         </div>
@@ -63,35 +57,19 @@ const Footer = () => {
                     </p>
 
                     <div className="flex items-center gap-4 text-xl">
-                        <a
-                            href="https://facebook.com"
-                            target="_blank"
-                            className="hover:text-white transition duration-200"
-                        >
+                        <a>
                             <FaFacebook />
                         </a>
 
-                        <a
-                            href="https://github.com"
-                            target="_blank"
-                            className="hover:text-white transition duration-200"
-                        >
+                        <a>
                             <FaGithub />
                         </a>
 
-                        <a
-                            href="https://linkedin.com"
-                            target="_blank"
-                            className="hover:text-white transition duration-200"
-                        >
+                        <a>
                             <FaLinkedin />
                         </a>
 
-                        <a
-                            href="https://youtube.com"
-                            target="_blank"
-                            className="hover:text-white transition duration-200"
-                        >
+                        <a>
                             <FaYoutube />
                         </a>
                     </div>

@@ -14,20 +14,20 @@ export default async function TopInstructor() {
 
     return (
         <div>
-            <h2 className="text-2xl font-bold mb-6">Top Instructors</h2>
+            <h2 className="text-3xl font-bold mb-6 text-center">Top Instructors</h2>
 
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 pt-5">
                 {topInstructors.map((course) => (
                     <div
                         key={course.id}
                         className="bg-white shadow-lg rounded-2xl overflow-hidden hover:shadow-xl transition"
                     >
-                        {/* <Image src={instructorImages(course.instructor)}
+                        <Image src={course.instructor_image}
                             alt={course.instructor}
                             width={100}
                             height={100}
                             className="rounded-full" >
-                        </Image> */}
+                        </Image>
 
                         <div className="p-4 space-y-2">
                             <h3 className="text-lg font-semibold">
