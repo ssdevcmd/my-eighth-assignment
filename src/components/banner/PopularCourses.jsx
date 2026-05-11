@@ -1,15 +1,8 @@
+import { getCourses } from "@/lib/data";
 import Link from "next/link";
 import { FaStar } from "react-icons/fa";
 
-async function getCourses() {
-    const res = await fetch("http://localhost:3000/courses.json");
 
-    if (!res.ok) {
-        throw new Error("Failed to fetch courses");
-    }
-
-    return res.json();
-}
 
 export default async function PopularCourses() {
     const courses = await getCourses();

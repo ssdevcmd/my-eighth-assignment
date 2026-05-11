@@ -1,34 +1,72 @@
 "use client";
 import { Button, Checkbox, Description, FieldError, Form, Input, Label, TextField } from '@heroui/react';
 import React from 'react';
+import { useForm } from 'react-hook-form';
 
 const RegisterPage = () => {
+
+    const {
+        register,
+        handleSubmit,
+        watch } = useForm();
+
+
+    const handleRegisterFunc = (data) => {
+        // e.preventDefault();
+        // const email = e.target.email.value;
+        // const password = e.target.password.value;
+        // console.log('user email & password:',email, password, );
+        console.log('user data:', data);
+    };
+    // console.log(watch('email'));
+    // console.log(watch('password'));
     return (
         <div>
             <h2 className='text-3xl font-bold text-center py-10 mx-auto'>Register your account</h2>
-            <Form className="flex w-96 flex-col gap-4 mx-auto">
+            <Form className="flex w-96 flex-col gap-4 mx-auto" onSubmit={handleSubmit(handleRegisterFunc)}>
 
                 {/* name */}
                 <TextField
                     isRequired
-                    name="name"
                     type="text"
                     validate={(value) => {
-                        if (!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i.test(value)) {
-                            return "Please enter a valid user name";
+                        {
+                            if (value.trim().length < 3)
+                                return "Name must be at least 3 characters";
                         }
                         return null;
                     }}
                 >
                     <Label>Name</Label>
-                    <Input placeholder="Enter your name" />
+                    <Input placeholder="Enter your name"
+                        {...register("name")} />
+                    <FieldError />
+                </TextField>
+
+                {/* photo url */}
+                <TextField
+                    isRequired
+                    type="text"
+                    validate={(value) => {
+                        {
+                            try {
+                                new URL(value);
+                                return null;
+                            } catch {
+                                return "Please enter a valid photo URL";
+                            }
+                        }
+                    }}
+                >
+                    <Label>Photo URL</Label>
+                    <Input placeholder="Enter your photo url"
+                        {...register("photo")} />
                     <FieldError />
                 </TextField>
 
                 {/* email */}
                 <TextField
                     isRequired
-                    name="email"
                     type="email"
                     validate={(value) => {
                         if (!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i.test(value)) {
@@ -38,7 +76,8 @@ const RegisterPage = () => {
                     }}
                 >
                     <Label>Email</Label>
-                    <Input placeholder="john@example.com" />
+                    <Input placeholder="Enter your email"
+                        {...register("email")} />
                     <FieldError />
                 </TextField>
 
@@ -46,7 +85,6 @@ const RegisterPage = () => {
                 <TextField
                     isRequired
                     minLength={8}
-                    name="password"
                     type="password"
                     validate={(value) => {
                         if (value.length < 8) {
@@ -62,18 +100,17 @@ const RegisterPage = () => {
                     }}
                 >
                     <Label>Password</Label>
-                    <Input placeholder="Enter your password" />
+                    <Input placeholder="Enter your password"
+                        {...register("password")} />
                     <Description>Must be at least 8 characters with 1 uppercase and 1 number</Description>
                     <FieldError />
                 </TextField>
                 <div className="flex gap-2">
-                    <Button type="submit">
+                    <Button type="submit" className="w-full">
                         <Checkbox />
-                        Submit
+                        Register
                     </Button>
-                    <Button type="reset" variant="secondary">
-                        Reset
-                    </Button>
+
                 </div>
             </Form>
 

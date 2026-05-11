@@ -6,7 +6,7 @@ import TopInstructor from "@/components/banner/TopInstructor";
 
 
 
-export default function Home() {
+export default async function Home() {
   return (
     <div>
       {/* <h2 className="text-4xl text-center text-orange-500">Homepage</h2> */}

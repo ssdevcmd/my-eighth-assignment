@@ -8,9 +8,11 @@ import industryImage from "@/assets/compatible.jpg";
 import learningImage from "@/assets/learning.webp";
 
 import "swiper/css";
+import "swiper/css/navigation";
 import "swiper/css/pagination";
 
-import { Pagination, Autoplay } from "swiper/modules";
+
+import { Navigation,Pagination, Autoplay } from "swiper/modules";
 
 const slides = [
   {
@@ -41,7 +43,7 @@ const HeroSlider = () => {
           delay: 3000,
           disableOnInteraction: false,
         }}
-        modules={[Pagination, Autoplay]}
+        modules={[Navigation ,Pagination, Autoplay]}
         className="mySwiper"
       >
         {slides.map((slide) => (

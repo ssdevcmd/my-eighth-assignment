@@ -1,17 +1,10 @@
 
+import { getCourses } from "@/lib/data";
 import { Button } from "@heroui/react";
 import Link from "next/link";
 import { FaEye, FaStar } from "react-icons/fa";
 
-const getCourses = async () => {
-    const res = await fetch("http://localhost:3000/courses.json");
 
-    if (!res.ok) {
-        throw new Error("Failed to fetch courses");
-    }
-
-    return res.json();
-};
 
 export default async function CoursesPage() {
     const courses = await getCourses();
