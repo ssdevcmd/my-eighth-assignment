@@ -1,40 +1,29 @@
 "use client";
-
-import Image from "next/image";
 import { Swiper, SwiperSlide } from "swiper/react";
-
-import upgradeImage from "@/assets/upgrade.webp";
-import industryImage from "@/assets/compatible.jpg";
-import learningImage from "@/assets/learning.webp";
-
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
-
-
 import { Navigation,Pagination, Autoplay } from "swiper/modules";
 
 const slides = [
   {
-    id: 1,
     title: "Upgrade Your Skills Today",
-    image: upgradeImage,
+    description: "Start learning modern web development with real projects.",
   },
   {
-    id: 2,
     title: "Learn from Industry Experts",
-    image: industryImage,
+    description: "Get practical knowledge from experienced developers.",
   },
   {
-    id: 3,
-    title: "Start Your Learning Journey",
-    image: learningImage,
+    title: "Build Real World Projects",
+    description: "Improve your portfolio with hands-on coding experience.",
   },
 ];
 
+
 const HeroSlider = () => {
   return (
-    <div>
+    <div className="container mx-auto p-10">
       <Swiper
         slidesPerView={1}
         spaceBetween={30}
@@ -48,18 +37,11 @@ const HeroSlider = () => {
       >
         {slides.map((slide) => (
           <SwiperSlide key={slide.id}>
-            <div className="container mx-auto flex flex-col md:flex-row justify-between items-center gap-6 py-10">
-              <h2 className="text-4xl md:text-7xl font-bold text-center">
+            <div className="bg-gradient-to-r from-blue-600 to-indigo-600 text-white py-20 px-6 text-center rounded-2xl container mx-auto">
+              <h2 className="text-3xl md:text-5xl font-bold mb-4">
                 {slide.title}
               </h2>
-
-              <Image
-                src={slide.image}
-                alt={slide.title}
-                width={600}
-                height={400}
-                className="w-full max-w-4xl rounded-2xl"
-              />
+              <p className="text-lg md:text-xl mb-6">{slide.description}</p>
             </div>
           </SwiperSlide>
         ))}

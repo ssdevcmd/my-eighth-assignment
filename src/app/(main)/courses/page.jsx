@@ -44,9 +44,7 @@ export default async function CoursesPage() {
                         >
                           Level: {course.level}
                         </p>
-                        <p className="mt-2 text-sm text-gray-700">
-                            {course.description}
-                        </p>
+                       
                         <div className="p-4 mt-auto">
                             <Link href={`/courses/${course.id}`}><Button>Details</Button></Link>
                         </div>

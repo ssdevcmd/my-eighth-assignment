@@ -3,7 +3,7 @@ import { CgNotes } from "react-icons/cg";
 import { FaLaptop } from "react-icons/fa";
 import { FaRepeat } from "react-icons/fa6";
 import { FcAlarmClock } from "react-icons/fc";
-import { MdMobileOff } from "react-icons/md";
+import { MdMobileOff, MdOutlineTipsAndUpdates, MdTipsAndUpdates } from "react-icons/md";
 import { TbTargetArrow } from "react-icons/tb";
 
 const learningTips = [
@@ -55,7 +55,8 @@ const LearningTips = () => {
   return (
     <section className="max-w-7xl mx-auto px-4 py-16">
       <div className="text-center mb-12">
-        <h2 className="text-3xl md:text-4xl font-bold text-gray-900">
+        <h2 className="text-3xl font-bold mb-6 flex items-center justify-center gap-3">
+          <MdTipsAndUpdates className="text-violet-500" />
            Learning Tips
         </h2>
         <p className="mt-3 text-gray-600 max-w-2xl mx-auto">

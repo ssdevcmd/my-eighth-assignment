@@ -2,6 +2,7 @@ import HeroSlider from "@/components/banner/HeroSlider";
 import LearningTips from "@/components/banner/LearningTips";
 import PopularCourses from "@/components/banner/PopularCourses";
 import TopInstructor from "@/components/banner/TopInstructor";
+import TrendingCourses from "@/components/banner/TrendingCourses";
 
 
 
@@ -13,6 +14,7 @@ export default async function Home() {
 
       <HeroSlider></HeroSlider>
       <PopularCourses></PopularCourses>
+      <TrendingCourses></TrendingCourses>
       <LearningTips></LearningTips>
       <TopInstructor></TopInstructor>
     </div>

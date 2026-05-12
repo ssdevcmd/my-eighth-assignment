@@ -1,10 +1,14 @@
 "use client";
 import { authClient } from '@/lib/auth-client';
-import { Button, Checkbox, Description, FieldError, Form, Input, Label, TextField, Toast, toast } from '@heroui/react';
-import React from 'react';
+import { Button, Checkbox, Description, FieldError, Form, Input, InputGroup, Label, TextField, Toast, toast } from '@heroui/react';
+import React, { useState } from 'react';
 import { useForm } from 'react-hook-form';
+import { Eye, EyeSlash } from "@gravity-ui/icons";
+
+
 
 const RegisterPage = () => {
+    const [isVisible, setIsVisible] = useState(false);
 
     const {
         register,
@@ -25,17 +29,17 @@ const RegisterPage = () => {
             email: email, // required
             password: password, // required
             image: photo,
-            callbackURL: "/",
+            callbackURL: "/login",
         });
         console.log(res, error);
-        
+
         if (error) {
             toast.danger(error.message);
             return;
         }
 
         if (res) {
-            toast.success("Signup successful");
+            toast.success("Registration successful!");
         }
     };
     // console.log(watch('email'));
@@ -102,7 +106,8 @@ const RegisterPage = () => {
                 </TextField>
 
                 {/* password */}
-                <TextField
+                {/* password */}
+                <TextField className="w-full max-w-[280px]" name="password"
                     isRequired
                     minLength={8}
                     type="password"
@@ -117,15 +122,35 @@ const RegisterPage = () => {
                             return "Password must contain at least one number";
                         }
                         return null;
-                    }}
-                >
+                    }}>
+
+
                     <Label>Password</Label>
-                    <Input placeholder="Enter your password"
-                        {...register("password")} />
+                    <InputGroup>
+                        <InputGroup.Input
+                            className="w-full max-w-[280px]"
+                            type={isVisible ? "text" : "password"}
+                            {...register("password")}
+
+                            placeholder='Enter your password'
+                        />
+
+                        <InputGroup.Suffix className="pr-0">
+                            <Button
+                                isIconOnly
+                                aria-label={isVisible ? "Hide password" : "Show password"}
+                                size="sm"
+                                variant="ghost"
+                                onPress={() => setIsVisible(!isVisible)}
+                            >
+                                {isVisible ? <Eye className="size-4" /> : <EyeSlash className="size-4" />}
+                            </Button>
+                        </InputGroup.Suffix>
+                    </InputGroup>
                     <Description>Must be at least 8 characters with 1 uppercase and 1 number</Description>
-                    <FieldError />
                 </TextField>
                 <div className="flex gap-2">
+
                     <Button type="submit" className="w-full">
                         <Checkbox />
                         Register
