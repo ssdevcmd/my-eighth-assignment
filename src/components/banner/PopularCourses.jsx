@@ -1,4 +1,5 @@
 import { getCourses } from "@/lib/data";
+import { Button } from "@heroui/react";
 import Image from "next/image";
 import Link from "next/link";
 import { FaRocket, FaStar } from "react-icons/fa";
@@ -43,9 +44,9 @@ const PopularCourses = async() => {
 
                                 <div className="flex-1"></div>
                                 <Link href={`/courses/${course.id}`}>
-                                    <button className="mt-4 w-full bg-blue-600 text-white py-2 rounded-xl cursor-pointer">
+                                    <Button className="mt-4 w-full bg-blue-600 text-white py-2 rounded-xl cursor-pointer">
                                         View Details
-                                    </button>
+                                    </Button>
                                 </Link>
 
                         </div>

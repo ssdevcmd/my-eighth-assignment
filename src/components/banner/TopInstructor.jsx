@@ -13,7 +13,7 @@ export default async function TopInstructor() {
         .slice(0, 4);
 
     return (
-        <div>
+        <div className="container mx-auto px-4 py-16">
             <h2 className="text-3xl font-bold mb-6 text-center">Top Instructors</h2>
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 pt-5">
@@ -35,7 +35,7 @@ export default async function TopInstructor() {
                             </h3>
 
                             <p className="text-gray-600 text-sm">
-                                {course.title}
+                            <span className="font-semibold text-teal-500">Expert in : </span>   {course.title}
                             </p>
 
                             <p className="text-sm text-yellow-600 flex gap-1">

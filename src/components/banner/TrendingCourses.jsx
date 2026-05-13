@@ -50,7 +50,7 @@ const TrendingCourses = async () => {
 
                             <div className="mt-auto">
                                 <Link href={`/courses/${course.id}`}>
-                                    <Button className="w-full">
+                                    <Button className="mt-4 w-full bg-blue-600 text-white py-2 rounded-xl cursor-pointer">
                                         View Details
                                     </Button>
                                 </Link>

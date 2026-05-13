@@ -1,6 +1,4 @@
-
 "use client";
-
 import { useEffect, useState } from "react";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
@@ -12,9 +10,8 @@ import {
     Spinner,
     toast,
 } from "@heroui/react";
-import { Form, useForm } from "react-hook-form";
+import { useForm } from "react-hook-form";
 import { authClient } from "@/lib/auth-client";
-
 // export const metadata = {
 //   title: "SkillSphere - my profile",
 // };
@@ -38,12 +35,6 @@ export default function MyProfilePage() {
     useEffect(() => {
         const fetchSession = async () => {
             const { data } = await authClient.getSession(); // { session, user }
-
-            if (!data?.user) {
-                router.push("/login");
-                return;
-            }
-
             setUser(data.user);
 
             // Fill form with existing data
@@ -114,14 +105,14 @@ export default function MyProfilePage() {
                     </div>
 
                     <h2 className="text-2xl font-semibold mt-4">
-                        {user.name}
+                        {user?.name}
                     </h2>
 
                     <p className="text-gray-500">{user.email}</p>
                 </div>
 
                 {/* Update Form */}
-                <Form
+                <form
                     onSubmit={handleSubmit(handleUpdateProfile)}
                     className="space-y-5"
                 >
@@ -132,7 +123,7 @@ export default function MyProfilePage() {
                             required: "Name is required",
                         })}
                        
-                        errorMessage={errors.name?.message}
+                        
                     />
 
                     <Input
@@ -144,7 +135,7 @@ export default function MyProfilePage() {
                     <Input
                         label="Email"
                         value={user.email}
-                        isReadOnly
+                        readOnly
                     />
 
                     <Button
@@ -155,7 +146,7 @@ export default function MyProfilePage() {
                     >
                         Update Profile
                     </Button>
-                </Form>
+                </form>
 
             </Card>
         </div>

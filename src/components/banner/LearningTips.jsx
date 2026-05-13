@@ -53,7 +53,7 @@ const learningTips = [
 
 const LearningTips = () => {
   return (
-    <section className="max-w-7xl mx-auto px-4 py-16">
+    <div className="mx-auto px-4 py-16">
       <div className="text-center mb-12">
         <h2 className="text-3xl font-bold mb-6 flex items-center justify-center gap-3">
           <MdTipsAndUpdates className="text-violet-500" />
@@ -83,7 +83,7 @@ const LearningTips = () => {
           </div>
         ))}
       </div>
-    </section>
+    </div>
   );
 };
 
