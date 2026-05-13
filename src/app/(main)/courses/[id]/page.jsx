@@ -1,5 +1,6 @@
 import { getCourses } from "@/lib/data";
 import Image from "next/image";
+import { FaStar } from "react-icons/fa";
 
 export const generateMetadata = async ({ params }) => {
     const { id } = await params;
@@ -25,9 +26,6 @@ const CourseDetailsPage = async ({ params }) => {
         (item) => item.id.toString() === id
     );
 
-    if (!course) {
-        return <h2 className="font-bold text-5xl text-red-500 text-center py-10">Course not found</h2>;
-    }
 
     // Static curriculum list
     const curriculum = [
@@ -71,17 +69,17 @@ const CourseDetailsPage = async ({ params }) => {
             <p className="text-sm font-semibold text-gray-700 mb-2">Category: {course.category}</p>
 
             {/* course rating */}
-            <p className="font-semibold text-yellow-600 mb-2">
-                ⭐ {course.rating}
+            <p className="font-semibold text-yellow-600 mb-2 flex items-center gap-2">
+                <FaStar></FaStar> {course.rating}
             </p>
 
-            <p
-                className={`mb-4 font-medium px-3 py-1 inline-block rounded-full text-white ${course.level === "Beginner"
-                    ? "bg-green-500"
-                    : course.level === "Intermediate"
-                        ? "bg-yellow-500"
-                        : "bg-red-500"
-                    }`}>
+
+            <p className={`mb-4 font-medium px-3 py-1 inline-block rounded-full text-white ${course.level === "Beginner"
+                ? "bg-green-500"
+                : course.level === "Intermediate"
+                    ? "bg-yellow-500"
+                    : "bg-red-500"
+                }`}>
 
                 {/* course level */}
                 Level: {course.level}
@@ -99,13 +97,13 @@ const CourseDetailsPage = async ({ params }) => {
                 </h2>
 
                 <ul className="space-y-3 list-decimal list-inside marker:text-blue-600">
-                  {curriculum.map((c, index)=> (
-                  <li
-                    key={index}
-                    className="font-semibold items-center gap-3 text-gray-700">
-                    {c}
-                   </li>
-                   ))}
+                    {curriculum.map((c, index) => (
+                        <li
+                            key={index}
+                            className="font-semibold items-center gap-3 text-gray-700">
+                            {c}
+                        </li>
+                    ))}
                 </ul>
             </div>
         </div>

@@ -37,7 +37,7 @@ const Navbar = () => {
                         <span>SkillSphere</span>
                     </Link>
 
-                    {/* Nav Links */}
+                    {/* routes */}
                     <div className="hidden md:flex items-center gap-8 font-medium text-gray-700">
                         <NavLink href="/">
                             Home
@@ -53,14 +53,14 @@ const Navbar = () => {
                     </div>
 
 
-                {/* Auth Section */}
+                {/* authentication */}
                 <div className="flex items-center gap-3">
                     {isPending ? (
                         <Spinner color='accent' size='lg' />
                     ) : user ? (
                         <>
                             <h2 className="font-semibold">Welcome,{user.name}!</h2>
-                            {/* Avatar */}
+                            
                             <div className="relative w-11 h-11 rounded-full overflow-hidden border-2 border-blue-500">
 
                                 <Image
@@ -71,7 +71,7 @@ const Navbar = () => {
                                 />
                             </div>
 
-                            {/* Logout */}
+                            {/* logout */}
                             <Button
                                 onClick={async () => await authClient.signOut()}
                                 className="px-4 py-2 rounded-xl bg-red-500  text-white font-medium transition duration-200">
@@ -80,14 +80,14 @@ const Navbar = () => {
                         </>
                     ) : (
                         <>
-                            {/* Login */}
+                            {/* login */}
                             <Link
                                 href="/login"
                                 className="px-4 py-2 rounded-xl border border-blue-600 bg-blue-700 text-white  font-medium">
                                 Login
                             </Link>
 
-                            {/* Google Login Button */}
+                            {/* google login */}
                             <Button
                                 onClick={handleGoogleSignin}>
                                 <Link

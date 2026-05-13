@@ -55,8 +55,8 @@ const RegisterPage = () => {
                     type="text"
                     validate={(value) => {
                         {
-                            if (value.trim().length < 3)
-                                return "Name must be at least 3 characters";
+                        if (value.trim().length < 3)
+                         return "Name must be at least 3 characters";
                         }
                         return null;
                     }}
@@ -73,11 +73,11 @@ const RegisterPage = () => {
                     type="text"
                     validate={(value) => {
                         {
-                            try {
-                                new URL(value);
-                                return null;
+                           try {
+                           new URL(value);
+                           return null;
                             } catch {
-                                return "Please enter a valid photo URL";
+                            return "Please enter a valid photo URL";
                             }
                         }
                     }}

@@ -1,6 +1,7 @@
 
 import { getCourses } from "@/lib/data";
 import { Button } from "@heroui/react";
+import Image from "next/image";
 import Link from "next/link";
 import { FaEye, FaStar } from "react-icons/fa";
 
@@ -8,7 +9,7 @@ export const metadata = {
   title: "SkillSphere - courses",
 };
 
-export default async function CoursesPage() {
+const CoursesPage = async() => {
     const courses = await getCourses();
     console.log(courses, 'all courses');
 
@@ -22,9 +23,11 @@ export default async function CoursesPage() {
                         key={course.id}
                         className="border rounded-2xl p-4 shadow-sm flex flex-col h-ful gap-1"
                     >
-                        <img
+                        <Image
                             src={course.image}
                             alt={course.title}
+                            width={800}
+                            height={400}
                             className="w-full h-48 object-cover rounded-xl mb-4"
                         />
 
@@ -46,11 +49,15 @@ export default async function CoursesPage() {
                         </p>
                        
                         <div className="p-4 mt-auto">
-                            <Link href={`/courses/${course.id}`}><Button>Details</Button></Link>
+                            <Link href={`/courses/${course.id}`}>
+                            <Button className="w-full">Details</Button>
+                            </Link>
                         </div>
                     </div>
                 ))}
             </div>
         </div>
     );
-}
+};
+
+export default CoursesPage;

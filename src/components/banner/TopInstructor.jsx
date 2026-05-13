@@ -5,7 +5,7 @@ import { FaStar } from "react-icons/fa";
 
 
 
-export default async function TopInstructor() {
+const TopInstructor = async() => {
     const courses = await getCourses();
 
     const topInstructors = courses
@@ -47,5 +47,7 @@ export default async function TopInstructor() {
             </div>
         </div>
     );
-}
+};
+
+export default TopInstructor;
 
