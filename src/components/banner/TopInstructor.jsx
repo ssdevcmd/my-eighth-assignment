@@ -5,7 +5,7 @@ import { FaStar } from "react-icons/fa";
 
 
 
-const TopInstructor = async() => {
+const TopInstructor = async () => {
     const courses = await getCourses();
 
     const topInstructors = courses
@@ -20,7 +20,7 @@ const TopInstructor = async() => {
                 {topInstructors.map((course) => (
                     <div
                         key={course.id}
-                        className="bg-white shadow-lg rounded-2xl overflow-hidden hover:shadow-xl transition"
+                        className="bg-white shadow-lg rounded-2xl overflow-hidden"
                     >
                         <Image src={course.instructor_image}
                             alt={course.instructor}
@@ -35,7 +35,7 @@ const TopInstructor = async() => {
                             </h3>
 
                             <p className="text-gray-600 text-sm">
-                            <span className="font-semibold text-teal-500">Expert in : </span>   {course.title}
+                                <span className="font-semibold text-teal-500">Expert in : </span>   {course.title}
                             </p>
 
                             <p className="text-sm text-yellow-600 flex gap-1">

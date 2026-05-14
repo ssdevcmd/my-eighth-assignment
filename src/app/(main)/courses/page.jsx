@@ -1,9 +1,10 @@
-
 import { getCourses } from "@/lib/data";
 import { Button } from "@heroui/react";
 import Image from "next/image";
 import Link from "next/link";
 import { FaEye, FaStar } from "react-icons/fa";
+import 'animate.css';
+
 
 export const metadata = {
   title: "SkillSphere - courses",
@@ -14,10 +15,10 @@ const CoursesPage = async() => {
     console.log(courses, 'all courses');
 
     return (
-        <div className="max-w-7xl mx-auto px-4 py-10">
+        <div className="mx-auto px-4 py-10">
             <h1 className="text-3xl font-bold mb-8">All Courses</h1>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 animate__animated animate__rotateIn animate__faster">
                 {courses.map((course) => (
                     <div
                         key={course.id}

@@ -20,7 +20,7 @@ export const generateMetadata = async ({ params }) => {
 const CourseDetailsPage = async ({ params }) => {
     const { id } = await params;
 
-    const courses = getCourses();
+    const courses = await getCourses();
 
     const course = courses.find(
         (item) => item.id.toString() === id
