@@ -31,7 +31,7 @@ const MyProfilePage = () => {
                 <div className="flex flex-col items-center mb-8">
                     <div className="relative w-28 h-28 rounded-full overflow-hidden border-4 border-blue-500">
                         <Image
-                            src={user?.image || "/default-avatar.png"}
+                            src={user?.image || userAvatar}
                             alt={user?.name || "User Avatar"}
                             fill
                             className="rounded"
