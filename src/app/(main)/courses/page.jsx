@@ -25,7 +25,7 @@ const CoursesPage = async() => {
                         className="border rounded-2xl p-4 shadow-sm flex flex-col h-ful gap-1"
                     >
                         <Image
-                            src={course.image}
+                            src={course.image || "/placeholder.jpg"}
                             alt={course.title}
                             width={800}
                             height={400}
