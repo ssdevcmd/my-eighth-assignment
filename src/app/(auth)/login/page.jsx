@@ -28,6 +28,15 @@ const LoginPage = () => {
       callbackURL: "/",
     });
     console.log(res, error);
+
+    if (error) {
+      toast.danger(error.message);
+      return;
+    }
+
+    if (res) {
+      toast.success("Signin successful!");
+    }
   };
   // console.log(watch('email'));
   // console.log(watch('password'));
@@ -80,10 +89,10 @@ const LoginPage = () => {
               className="w-full max-w-[280px]"
               type={isVisible ? "text" : "password"}
               {...register("password")}
-              
+
               placeholder='Enter your password'
             />
-            
+
             <InputGroup.Suffix className="pr-0">
               <Button
                 isIconOnly
@@ -96,7 +105,7 @@ const LoginPage = () => {
               </Button>
             </InputGroup.Suffix>
           </InputGroup>
-          
+
         </TextField>
         <div className="flex gap-2">
           <Button type="submit" className="w-full">
