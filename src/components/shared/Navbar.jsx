@@ -58,7 +58,7 @@ const Navbar = () => {
 
                 <div className="relative w-11 h-11 rounded-full overflow-hidden border-2 border-blue-500">
                   <Image
-                    src={user?.image}
+                    src={user?.image || userAvatar}
                     alt={"User Avatar"}
                     fill
                     className="object-cover"

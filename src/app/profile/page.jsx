@@ -3,6 +3,7 @@ import Image from "next/image";
 import { Button, Card, Spinner } from "@heroui/react";
 import { authClient } from "@/lib/auth-client";
 import Link from "next/link";
+import userAvatar from "@/assets/user.png";
 
 
 
