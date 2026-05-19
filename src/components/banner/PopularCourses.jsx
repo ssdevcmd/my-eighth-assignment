@@ -25,7 +25,7 @@ const PopularCourses = async() => {
                 {popularCourses.map((course) => (
                     <div
                         key={course.id}
-                        className="border rounded-2xl overflow-hidden shadow hover:shadow-lg transition flex-1"
+                       className="border rounded-2xl overflow-hidden shadow hover:shadow-lg transition h-full flex flex-col"
                     >
                         <Image
                             src={course.image}

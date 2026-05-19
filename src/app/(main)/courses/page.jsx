@@ -103,4 +103,4 @@ const CoursesPage = async ({ courses }) => {
             );
 };
 
-            export default CoursesPage;
+export default CoursesPage;
