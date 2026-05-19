@@ -13,12 +13,14 @@ const Navbar = () => {
   const user = session?.user;
   console.log(session, 'session data');
   console.log(user);
+  
 
   const handleGoogleSignin = async () => {
     const data = await authClient.signIn.social({
       provider: "google",
     });
     console.log(data, 'google signin');
+
   }
 
   return (

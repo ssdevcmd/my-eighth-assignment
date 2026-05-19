@@ -41,7 +41,7 @@ const UpdateProfilePage = () => {
 
                 {/* name */}
                 <TextField
-                    
+
                     type="text"
                     validate={(value) => {
                         // {
@@ -60,13 +60,13 @@ const UpdateProfilePage = () => {
 
                 {/* photo url */}
                 <TextField
-                    
+
                     type="text"
                     validate={(value) => {
                         // {
                         //     try {
                         //         new URL(value);
-                        //         return null;
+                        // return null;
                         //     } catch {
                         //         return "Please enter a valid photo URL";
                         //     }
@@ -75,14 +75,14 @@ const UpdateProfilePage = () => {
                 >
                     <Label>Photo URL</Label>
                     <Input placeholder="Enter your photo url"
-                     {...register("photo")}
+                        {...register("photo")}
                     />
                     <FieldError />
                 </TextField>
 
                 <Button type='submit' className='w-full'>Update information</Button>
             </Form>
-            
+
         </div>
     );
 };
