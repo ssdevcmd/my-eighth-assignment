@@ -1,6 +1,5 @@
-"use client";
 import { getCourses } from "@/lib/data";
-import { Button, Label, SearchField } from "@heroui/react";
+import { Button } from "@heroui/react";
 import Image from "next/image";
 import Link from "next/link";
 import { FaEye, FaStar } from "react-icons/fa";
@@ -12,55 +11,18 @@ export const metadata = {
     title: "SkillSphere - courses",
 };
 
-const CoursesPage = async ({ courses }) => {
+const CoursesPage = async () => {
     const courses = await getCourses();
     console.log(courses, 'all courses');
-    const [searchItem, setSearchItem] = useState("");
+  
 
-    const filteredCourses = courses.filter((course) => {
-        const item = searchItem.toLowerCase().trim();
-
-        if (!item) { return courses; }
-        else {
-            return (
-                course.title.toLowerCase().includes(item))
-        };
-    })
     return (
-
-        <div className="max-w-7xl mx-auto px-4 py-8">
-            {/* Search Box */}
-            <div className="mb-6">
-                <SearchField
-                    value={searchItem}
-                    onChange={setSearchItem}
-                    onClear={() => setSearchItem("")}
-                >
-                    <Label>Search Courses</Label>
-
-                    <SearchField.Group>
-                        <SearchField.SearchIcon />
-
-                        <SearchField.Input
-                            className="w-full md:w-[320px]"
-                            placeholder="Search courses..."
-                        />
-
-                        <SearchField.ClearButton />
-                    </SearchField.Group>
-                </SearchField>
-            </div>
-
-            {/* No Results */}
-            {filteredCourses.length === 0 && (
-                <p className="font-bold text-4xl">No courses found.</p>
-            )}
 
             <div className="mx-auto px-4 py-10">
                 <h1 className="text-3xl font-bold mb-8">All Courses</h1>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 animate__animated animate__rotateIn animate__faster">
-                    {filteredCourses.map((course) => (
+                    {courses.map((course) => (
                         <div
                             key={course.id}
                             className="border rounded-2xl p-4 shadow-sm flex flex-col h-ful gap-1"
@@ -99,8 +61,7 @@ const CoursesPage = async ({ courses }) => {
                     ))}
                 </div>
             </div>
-            </div>
             );
 };
 
-export default CoursesPage;
+ export default CoursesPage;
