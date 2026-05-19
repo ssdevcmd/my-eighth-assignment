@@ -4,7 +4,6 @@ import Image from "next/image";
 import Link from "next/link";
 import { FaEye, FaStar } from "react-icons/fa";
 import 'animate.css';
-import { useState } from "react";
 
 
 export const metadata = {
